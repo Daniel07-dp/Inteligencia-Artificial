@@ -1,0 +1,37 @@
+ por defecto mostrar_menu ( opciones ) :
+    print ( 'Seleccione una opción:' )
+    para  clave  en  ordenado ( opciones ):
+        print ( f' { clave } ) { opciones [ clave ][ 0 ] } ' )
+
+def  leer_opcion ( opciones ):
+    while ( a  :=  input ( 'Opción: ' )) no  en  opciones :
+        print ( 'Opción incorrecta, vuelva a intentarlo.' )
+    devolver  un
+
+def  ejecutar_opcion ( opcion , opciones ):
+    opciones [ opción ][ 1 ]()
+
+def  generar_menu ( opciones , opcion_salida ):
+    opción  =  Ninguno
+    while  opcion  !=  opcion_salida :
+        mostrar_menu ( opciones )
+        opcion  =  leer_opcion ( opciones )
+        ejecutar_opcion ( opcion , opciones )
+        imprimir ()
+
+def  menú_principal ():
+    opciones  = {
+        '1' : ( 'Imprimir biografia' , accion1 ),
+        '2' : ( 'Salir' , salir )
+    }
+    generar_menu ( opciones , '4' )
+
+def  accion1 ():
+    imprimir ( 'Biografía:' )
+    print ( 'Escribir su biografia fffffffff' )
+
+def  salir ():
+    imprimir ( 'Saliendo' )
+
+si  __nombre__  ==  '__principal__' :
+    menú_principal ()
